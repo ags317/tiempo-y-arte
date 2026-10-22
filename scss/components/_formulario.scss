@@ -1,0 +1,43 @@
+@use "../utilities/variables" as *;
+
+/* Formulario de participación: entrega 9 */
+.formulario-contacto {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.campo-contacto {
+  display: grid;
+  gap: .4rem;
+  label { font-weight: 600; }
+  input, textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: .85rem 1rem;
+    border: 1px solid #a58f91;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #2e2830;
+    font: inherit;
+    &:focus-visible { outline: 3px solid #a8783f; outline-offset: 2px; }
+  }
+  textarea { resize: vertical; }
+}
+.boton-contacto {
+  justify-self: start;
+  border: 0;
+  border-radius: 8px;
+  padding: .85rem 1.3rem;
+  background: #592f3d;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover { background: #79495a; }
+  &:focus-visible { outline: 3px solid #a8783f; outline-offset: 3px; }
+}
+.aviso-contacto { color: #665d62; }
+.resultado-contacto { display: block; padding: 1rem; border: 1px solid #e4d9ce; border-radius: 8px; overflow-wrap: anywhere; }
+.resultado-contacto[hidden] { display: none; }
