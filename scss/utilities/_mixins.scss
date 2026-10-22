@@ -1,9 +1,22 @@
+@use "variables" as v;
+
 @mixin pantalla($ancho) {
   @media (min-width: $ancho) { @content; }
 }
 
 @mixin tarjeta($padding: 20px) {
   padding: $padding;
-  border: 1px solid #e4d9ce;
+  border: 1px solid v.$color-borde;
   border-radius: 10px;
+}
+
+// Mixin con parámetros: animación reutilizable y accesible.
+@mixin transicion-suave($duracion: 250ms, $desplazamiento: 4px) {
+  transition: transform $duracion ease, box-shadow $duracion ease;
+  &:hover { transform: translateY(-$desplazamiento); }
+  &:active { transform: translateY(-1px); }
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:hover, &:active { transform: none; }
+  }
 }

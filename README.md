@@ -2,13 +2,15 @@
 
 Sitio educativo sobre historia del arte, con cinco páginas HTML.
 
-## Entregable 7 — Arquitectura SCSS y refactorización
+## Entregable 8 — SASS avanzado y animaciones
 
-- Estilos organizados en partials de `utilities/`, `base/`, `layout/` y `components/`.
-- `scss/main.scss` es el único punto de entrada.
-- Variables compartidas y mixins reutilizables.
-- CSS compilado en `styles/style.css`.
-- Ajustes responsive para navegación Bootstrap, grillas y carruseles.
+- Se conserva la arquitectura SCSS del entregable 7 y el diseño responsive.
+- Mixin con parámetros para transiciones y desplazamientos.
+- Uso de `@extend` mediante selector placeholder para tarjetas.
+- Variables, nesting, operador `&` y operaciones SASS.
+- Animación `@keyframes` en el título principal.
+- Librería AOS integrada en las cinco páginas con efectos de entrada.
+- Compatibilidad con `prefers-reduced-motion` para accesibilidad.
 
 Para compilar: `npm install` y `npm run build:css`.
 

@@ -1,0 +1,36 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+// Selector placeholder: se comparte con @extend sin generar CSS innecesario.
+%tarjeta-interactiva {
+  @include m.transicion-suave(280ms, 5px);
+  &:hover { box-shadow: 0 12px 28px rgba(v.$color-primario, .16); }
+  &:focus-within { outline: 2px solid v.$color-acento; outline-offset: 3px; }
+}
+
+.enlaces-flex article { @extend %tarjeta-interactiva; }
+.biografias-flex article { @extend %tarjeta-interactiva; }
+
+// Operadores Sass para escalas de espaciado y duración.
+$unidad: 0.25rem;
+$duracion-base: 120ms;
+
+.galeria-bootstrap .carousel-control-prev,
+.galeria-bootstrap .carousel-control-next {
+  transition: opacity ($duracion-base * 2) ease;
+}
+
+@keyframes aparecer-suave {
+  from { opacity: 0; transform: translateY($unidad * 3); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Animación CSS independiente de la librería AOS.
+main > section:first-child h1 {
+  animation: aparecer-suave 650ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section:first-child h1 { animation: none; }
+  [data-aos] { transition: none; }
+}

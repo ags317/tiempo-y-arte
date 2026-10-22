@@ -5,7 +5,7 @@ html { overflow-x: clip; }
 body { min-width: 0; overflow-wrap: break-word; }
 main, main > section, .portada-flex, .enlaces-flex, .biografias-flex { width: 100%; min-width: 0; }
 .site-header .navbar .container-fluid { flex-wrap: nowrap; }
-.site-header .navbar-brand { white-space: normal; min-width: 0; font-size: clamp(1.2rem, 4vw, 1.6rem); }
+.site-header .navbar-brand { white-space: nowrap; flex-shrink: 0; font-size: clamp(1.2rem, 2vw, 1.6rem); line-height: 1.3; }
 .site-header .navbar-toggler { flex-shrink: 0; }
 .site-header .navbar-collapse { flex-basis: 100%; min-width: 0; }
 .site-header .navbar-nav { align-items: stretch; }
@@ -30,4 +30,17 @@ main, main > section, .portada-flex, .enlaces-flex, .biografias-flex { width: 10
 }
 @media (min-width: 700px) and (max-width: 1023.98px) {
   .enlaces-flex, .biografias-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Ajustes visuales del entregable 8: títulos y alineación */
+main h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.2; overflow-wrap: break-word; }
+main > section { padding: clamp(20px, 3vw, 36px); }
+main section > figure { width: 100%; max-width: 100%; margin: 1.5rem auto; }
+main section > figure img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; }
+/* En la portada la imagen comparte espacio con el texto en escritorio */
+.portada-flex > figure { margin: 0; }
+@media (max-width: 699.98px) {
+  main h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  .site-header .navbar-brand { font-size: 1.25rem; }
+  main > section { padding: 20px; }
 }

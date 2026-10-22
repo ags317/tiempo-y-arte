@@ -11,7 +11,9 @@ section {
 }
 section:first-child { background-color: #f3e8da; }
 section h1, section h2, section h3 { margin-top: 0; }
-section p { max-width: 75ch; }
+section p { width: 100%; max-width: none; }
+section article, section ul { max-width: none; }
+main > section { width: 100%; min-width: 0; }
 article { margin: 1.2rem 0; }
 a { color: $color-primario; }
 a:hover { color: $color-acento; }
