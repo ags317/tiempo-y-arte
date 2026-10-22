@@ -1,0 +1,27 @@
+@use "../utilities/variables" as *;
+
+/* 7. Flexbox y Box Model — Entregable 3 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+header p { margin: 0; }
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .6rem 1.4rem;
+  list-style: none;
+  padding: 0;
+}
+nav li { margin: 0; }
+main { display: flex; flex-direction: column; gap: 1.5rem; }
+section { margin: 0; padding: max(20px, 1.75rem); }
+section p + p { margin-top: .75rem; }
+section ul { padding-left: 1.5rem; margin-top: 1rem; }
+section article { margin: 0; }
+section h2 + p, section h3 + p { margin-top: .75rem; }

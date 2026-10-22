@@ -1,0 +1,7 @@
+@use "../utilities/variables" as *;
+
+/* 5. Imágenes y epígrafes */
+figure { margin: 1.5rem 0 0; }
+img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+figcaption { margin-top: .7rem; color: $color-suave; font-size: .9rem; }
+figcaption a { font-size: inherit; }

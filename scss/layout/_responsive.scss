@@ -1,0 +1,33 @@
+@use "../utilities/variables" as *;
+
+/* Ajustes mobile-first: navegación, grillas y carruseles */
+html { overflow-x: clip; }
+body { min-width: 0; overflow-wrap: break-word; }
+main, main > section, .portada-flex, .enlaces-flex, .biografias-flex { width: 100%; min-width: 0; }
+.site-header .navbar .container-fluid { flex-wrap: nowrap; }
+.site-header .navbar-brand { white-space: normal; min-width: 0; font-size: clamp(1.2rem, 4vw, 1.6rem); }
+.site-header .navbar-toggler { flex-shrink: 0; }
+.site-header .navbar-collapse { flex-basis: 100%; min-width: 0; }
+.site-header .navbar-nav { align-items: stretch; }
+.site-header .navbar-nav .nav-link { display: block; }
+.portada-flex > figure, .portada-flex > .portada-texto { min-width: 0; }
+.galeria-bootstrap .carousel { width: 100%; min-width: 0; }
+.galeria-bootstrap .carousel-item img { display: block; width: 100%; max-width: 100%; }
+@media (max-width: 991.98px) {
+  .site-header .navbar .container-fluid { flex-wrap: wrap; }
+  .site-header .navbar-collapse { width: 100%; }
+  .site-header .navbar-nav { flex-direction: column; gap: .25rem; width: 100%; }
+  .site-header .navbar-nav .nav-link { padding: .75rem 1rem; }
+}
+@media (max-width: 699.98px) {
+  main { padding: 1.25rem 1rem 2.5rem; }
+  main > section { padding: 20px; }
+  .portada-flex { grid-template-columns: minmax(0, 1fr); grid-template-areas: "presentacion" "imagen"; }
+  .enlaces-flex, .biografias-flex { grid-template-columns: minmax(0, 1fr); }
+  .enlaces-flex article, .biografias-flex article { min-width: 0; width: 100%; }
+  .galeria-bootstrap .carousel-item img { height: 240px; object-fit: contain; }
+  .galeria-bootstrap .carousel-item figcaption { padding: .75rem 2.5rem 2.7rem; }
+}
+@media (min-width: 700px) and (max-width: 1023.98px) {
+  .enlaces-flex, .biografias-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,9 @@
+@mixin pantalla($ancho) {
+  @media (min-width: $ancho) { @content; }
+}
+
+@mixin tarjeta($padding: 20px) {
+  padding: $padding;
+  border: 1px solid #e4d9ce;
+  border-radius: 10px;
+}

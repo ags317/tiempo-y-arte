@@ -1,0 +1,15 @@
+// Único punto de entrada: el orden conserva la cascada de los módulos anteriores.
+@use "base/base";
+@use "base/tipografia";
+@use "layout/header";
+@use "layout/secciones";
+@use "components/imagenes";
+@use "layout/footer";
+@use "layout/flexbox";
+@use "components/enlaces";
+@use "components/cards";
+@use "layout/grid";
+@use "layout/nav";
+@use "layout/responsive";
+@use "components/buttons";
+@use "components/carousel";

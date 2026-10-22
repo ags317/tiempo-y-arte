@@ -1,0 +1,248 @@
+/* CSS compatible de la versión anterior. Regenerar con Sass desde scss/main.scss. */
+/* Entregable 3: reset universal y box-sizing */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ==========================================
+   TIEMPO & ARTE · Entregable 2
+   Paleta, tipografías, fondos y jerarquía visual
+   ========================================== */
+
+/* 1. Variables de identidad visual */
+:root {
+  --color-primario: #592f3d;
+  --color-secundario: #e8d7bd;
+  --color-acento: #a8783f;
+  --color-fondo: #faf6ef;
+  --color-superficie: #ffffff;
+  --color-texto: #2e2830;
+  --color-suave: #665d62;
+  --color-borde: #e4d9ce;
+}
+
+/* 2. Tipografía y fondo general */
+body {
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.22;
+  color: var(--color-primario);
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; }
+h2 { font-size: clamp(1.65rem, 3vw, 2.3rem); font-weight: 600; }
+h3 { font-size: 1.35rem; font-weight: 600; }
+p, li { font-size: 1rem; }
+
+/* 3. Encabezado y navegación */
+header {
+  background-color: var(--color-primario);
+  color: var(--color-superficie);
+  padding: 1.25rem max(1.5rem, calc((100vw - 1100px) / 2));
+}
+header p { margin: 0 0 .6rem; }
+header p a {
+  color: var(--color-superficie);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav ul { margin: 0; padding-left: 1.3rem; }
+nav li { margin: .2rem 0; }
+nav a { color: #f5e8d7; text-decoration: none; }
+nav a[aria-current="page"] { color: #ffd49b; font-weight: 700; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
+
+/* 4. Contenido y secciones */
+main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+section {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+section:first-child { background-color: #f3e8da; }
+section h1, section h2, section h3 { margin-top: 0; }
+section p { max-width: 75ch; }
+article { margin: 1.2rem 0; }
+a { color: var(--color-primario); }
+a:hover { color: var(--color-acento); }
+
+/* 5. Imágenes y epígrafes */
+figure { margin: 1.5rem 0 0; }
+img { display: block; max-width: 100%; height: auto; border-radius: 8px; }
+figcaption { margin-top: .7rem; color: var(--color-suave); font-size: .9rem; }
+figcaption a { font-size: inherit; }
+
+/* 6. Pie de página */
+footer {
+  background-color: var(--color-primario);
+  color: #f5e8d7;
+  padding: 1.5rem max(1.5rem, calc((100vw - 1100px) / 2));
+  font-size: .9rem;
+}
+footer p { margin: .35rem 0; }
+footer a { color: #ffd49b; }
+
+/* 7. Flexbox y Box Model — Entregable 3 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+header p { margin: 0; }
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .6rem 1.4rem;
+  list-style: none;
+  padding: 0;
+}
+nav li { margin: 0; }
+main { display: flex; flex-direction: column; gap: 1.5rem; }
+section { margin: 0; padding: max(20px, 1.75rem); }
+section p + p { margin-top: .75rem; }
+section ul { padding-left: 1.5rem; margin-top: 1rem; }
+section article { margin: 0; }
+section h2 + p, section h3 + p { margin-top: .75rem; }
+/* Contenido organizado en dos columnas flexibles en Inicio */
+.portada-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.portada-flex > .portada-texto { flex: 1 1 280px; min-width: 0; }
+.portada-flex > figure { flex: 1 1 320px; min-width: 0; margin: 0; }
+.portada-flex figure img { width: 100%; max-height: 420px; object-fit: cover; }
+.enlaces-flex { display: flex; flex-wrap: wrap; align-items: stretch; gap: 1rem; margin-top: 1rem; }
+.enlaces-flex article { flex: 1 1 190px; min-width: 0; padding: 20px; background: var(--color-fondo); border: 1px solid var(--color-borde); border-radius: 10px; }
+.enlaces-flex article p { margin-top: .6rem; }
+/* Biografías en tarjetas flexibles */
+.biografias-flex { display: flex; flex-wrap: wrap; align-items: stretch; gap: 1.25rem; margin-top: 1.25rem; }
+.biografias-flex article { flex: 1 1 280px; min-width: 0; padding: 22px; border: 1px solid var(--color-borde); border-radius: 10px; background: var(--color-fondo); }
+.biografias-flex article p { margin-top: .75rem; }
+@media (max-width: 680px) {
+  header { align-items: flex-start; }
+  nav ul { justify-content: flex-start; }
+}
+
+/* 8. Entregable 4: Grid y responsive mobile-first */
+/* En móviles, todas las áreas se apilan en una sola columna. */
+.portada-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "presentacion" "imagen";
+  gap: 1.5rem;
+}
+.portada-flex > .portada-texto { grid-area: presentacion; }
+.portada-flex > figure { grid-area: imagen; min-width: 0; }
+.enlaces-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.biografias-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+/* El contenido se adapta sin provocar desplazamiento horizontal. */
+main, main > section, .portada-texto, article { min-width: 0; }
+img { max-width: 100%; }
+/* Tablet: tarjetas en dos columnas. */
+@media (min-width: 700px) {
+  .enlaces-flex, .biografias-flex {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Escritorio: hero de dos columnas y grilla de destacados de tres. */
+@media (min-width: 1024px) {
+  .portada-flex {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    grid-template-areas: "presentacion imagen";
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .enlaces-flex { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .biografias-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Entregable 5: Bootstrap navbar, carrusel y estados interactivos */
+.site-header { display: block; padding: .5rem max(1rem, calc((100vw - 1100px) / 2)); }
+.site-header .navbar { display: block; padding: .5rem 0; }
+.site-header .navbar .container-fluid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; padding: 0; }
+.site-header .navbar-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; color: #ffffff; }
+.site-header .navbar-nav { display: flex; gap: .2rem; padding: 0; }
+.site-header .navbar-nav .nav-link { color: #f5e8d7; padding: .55rem .8rem; border-radius: .4rem; transition: color .2s ease, background-color .2s ease, transform .2s ease; }
+.site-header .navbar-nav .nav-link.active { color: #ffd49b; font-weight: 700; }
+.site-header .navbar-nav .nav-link:hover { color: #ffffff; background-color: #79495a; }
+.site-header .navbar-nav .nav-link:active { transform: scale(.96); }
+.site-header .navbar-toggler { border-color: #e8d7bd; }
+.site-header a:focus-visible, .site-header button:focus-visible, .galeria-bootstrap button:focus-visible, main a:focus-visible { outline: 3px solid #a8783f; outline-offset: 3px; }
+.enlaces-flex article, .biografias-flex article { transition: transform .25s ease, box-shadow .25s ease; }
+.enlaces-flex article:hover, .biografias-flex article:hover { transform: translateY(-4px); box-shadow: 0 10px 24px #592f3d20; }
+.enlaces-flex article:active, .biografias-flex article:active { transform: translateY(-1px); }
+.galeria-bootstrap { background: #f3e8da; }
+.galeria-bootstrap .carousel { max-width: 850px; margin: 1.5rem auto 0; overflow: hidden; border-radius: 12px; background: #2e2830; }
+.galeria-bootstrap .carousel-item figure { margin: 0; }
+.galeria-bootstrap .carousel-item img { height: clamp(240px, 48vw, 470px); object-fit: contain; border-radius: 0; }
+.galeria-bootstrap .carousel-item figcaption { padding: .8rem 1rem 2.7rem; margin: 0; color: #ffffff; background: #592f3d; text-align: center; }
+.galeria-bootstrap .carousel-control-prev, .galeria-bootstrap .carousel-control-next { width: 12%; opacity: .9; transition: opacity .2s ease; }
+.galeria-bootstrap .carousel-control-prev:hover, .galeria-bootstrap .carousel-control-next:hover { opacity: 1; }
+.galeria-bootstrap .carousel-control-prev:active, .galeria-bootstrap .carousel-control-next:active { transform: scale(.95); }
+@media (prefers-reduced-motion: reduce) { .enlaces-flex article, .biografias-flex article, .site-header .navbar-nav .nav-link { transition: none; } }
+
+/* Entregable 6: mejoras responsive */
+@media (max-width: 767px) {
+  main { padding: 1.5rem 1rem 3rem; }
+  .enlaces-flex article, .biografias-flex article { width: 100%; padding: 20px; }
+  .galeria-bootstrap .carousel-item img { max-width: 100%; height: 260px; object-fit: contain; }
+  .site-header .navbar-nav { gap: .5rem; }
+}
+
+/* Responsive patch; regenerate with npm run build:css */
+
+
+/* Ajustes mobile-first: navegación, grillas y carruseles */
+html { overflow-x: clip; }
+body { min-width: 0; overflow-wrap: break-word; }
+main, main > section, .portada-flex, .enlaces-flex, .biografias-flex { width: 100%; min-width: 0; }
+.site-header .navbar .container-fluid { flex-wrap: nowrap; }
+.site-header .navbar-brand { white-space: normal; min-width: 0; font-size: clamp(1.2rem, 4vw, 1.6rem); }
+.site-header .navbar-toggler { flex-shrink: 0; }
+.site-header .navbar-collapse { flex-basis: 100%; min-width: 0; }
+.site-header .navbar-nav { align-items: stretch; }
+.site-header .navbar-nav .nav-link { display: block; }
+.portada-flex > figure, .portada-flex > .portada-texto { min-width: 0; }
+.galeria-bootstrap .carousel { width: 100%; min-width: 0; }
+.galeria-bootstrap .carousel-item img { display: block; width: 100%; max-width: 100%; }
+@media (max-width: 991.98px) {
+  .site-header .navbar .container-fluid { flex-wrap: wrap; }
+  .site-header .navbar-collapse { width: 100%; }
+  .site-header .navbar-nav { flex-direction: column; gap: .25rem; width: 100%; }
+  .site-header .navbar-nav .nav-link { padding: .75rem 1rem; }
+}
+@media (max-width: 699.98px) {
+  main { padding: 1.25rem 1rem 2.5rem; }
+  main > section { padding: 20px; }
+  .portada-flex { grid-template-columns: minmax(0, 1fr); grid-template-areas: "presentacion" "imagen"; }
+  .enlaces-flex, .biografias-flex { grid-template-columns: minmax(0, 1fr); }
+  .enlaces-flex article, .biografias-flex article { min-width: 0; width: 100%; }
+  .galeria-bootstrap .carousel-item img { height: 240px; object-fit: contain; }
+  .galeria-bootstrap .carousel-item figcaption { padding: .75rem 2.5rem 2.7rem; }
+}
+@media (min-width: 700px) and (max-width: 1023.98px) {
+  .enlaces-flex, .biografias-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

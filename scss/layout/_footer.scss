@@ -1,0 +1,11 @@
+@use "../utilities/variables" as *;
+
+/* 6. Pie de página */
+footer {
+  background-color: $color-primario;
+  color: #f5e8d7;
+  padding: 1.5rem max(1.5rem, calc((100vw - 1100px) / 2));
+  font-size: .9rem;
+}
+footer p { margin: .35rem 0; }
+footer a { color: #ffd49b; }

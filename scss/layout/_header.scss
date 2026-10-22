@@ -1,0 +1,21 @@
+@use "../utilities/variables" as *;
+
+/* 3. Encabezado y navegación */
+header {
+  background-color: $color-primario;
+  color: $color-superficie;
+  padding: 1.25rem max(1.5rem, calc((100vw - 1100px) / 2));
+}
+header p { margin: 0 0 .6rem; }
+header p a {
+  color: $color-superficie;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav ul { margin: 0; padding-left: 1.3rem; }
+nav li { margin: .2rem 0; }
+nav a { color: #f5e8d7; text-decoration: none; }
+nav a[aria-current="page"] { color: #ffd49b; font-weight: 700; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
