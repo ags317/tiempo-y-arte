@@ -136,3 +136,44 @@ section h2 + p, section h3 + p { margin-top: .75rem; }
   header { align-items: flex-start; }
   nav ul { justify-content: flex-start; }
 }
+
+/* 8. Entregable 4: Grid y responsive mobile-first */
+/* En móviles, todas las áreas se apilan en una sola columna. */
+.portada-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "presentacion" "imagen";
+  gap: 1.5rem;
+}
+.portada-flex > .portada-texto { grid-area: presentacion; }
+.portada-flex > figure { grid-area: imagen; min-width: 0; }
+.enlaces-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.biografias-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+/* El contenido se adapta sin provocar desplazamiento horizontal. */
+main, main > section, .portada-texto, article { min-width: 0; }
+img { max-width: 100%; }
+/* Tablet: tarjetas en dos columnas. */
+@media (min-width: 700px) {
+  .enlaces-flex, .biografias-flex {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Escritorio: hero de dos columnas y grilla de destacados de tres. */
+@media (min-width: 1024px) {
+  .portada-flex {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    grid-template-areas: "presentacion imagen";
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .enlaces-flex { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .biografias-flex { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
