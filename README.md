@@ -2,12 +2,17 @@
 
 Sitio educativo sobre historia del arte, con cinco páginas HTML.
 
-## Entregable 5 — Bootstrap e interactividad
+## Entregable 6 — GitHub y control de versiones
 
-- Navbar Bootstrap 5.3.3 con menú hamburguesa en las cinco páginas.
-- Carruseles Bootstrap en Inicio y Obras.
-- CSS Grid y Flexbox propios conservados de los módulos anteriores.
-- Estados `:hover`, `:focus-visible`, `:active` y transiciones.
+- Repositorio público en GitHub.
+- Historial de commits descriptivos.
+- Rama de trabajo `feature/responsive-final`.
+- Mejoras responsive en Inicio, Artistas y Obras.
+- Merge de la rama de trabajo a `main`.
+- Sitio configurado para su publicación en GitHub Pages.
+- CSS Grid, Flexbox y Bootstrap conservados de los módulos anteriores.
+
+**Sitio web:** https://ags317.github.io/tiempo-y-arte/
 
 Abrí `index.html` en un navegador con conexión a internet (Bootstrap e imágenes se cargan mediante CDN/enlaces externos).
 
