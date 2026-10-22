@@ -1,3 +1,6 @@
+/* Entregable 3: reset universal y box-sizing */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 /* ==========================================
    TIEMPO & ARTE · Entregable 2
    Paleta, tipografías, fondos y jerarquía visual
@@ -86,3 +89,50 @@ footer {
 }
 footer p { margin: .35rem 0; }
 footer a { color: #ffd49b; }
+
+/* 7. Flexbox y Box Model — Entregable 3 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+header p { margin: 0; }
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: .6rem 1.4rem;
+  list-style: none;
+  padding: 0;
+}
+nav li { margin: 0; }
+main { display: flex; flex-direction: column; gap: 1.5rem; }
+section { margin: 0; padding: max(20px, 1.75rem); }
+section p + p { margin-top: .75rem; }
+section ul { padding-left: 1.5rem; margin-top: 1rem; }
+section article { margin: 0; }
+section h2 + p, section h3 + p { margin-top: .75rem; }
+/* Contenido organizado en dos columnas flexibles en Inicio */
+.portada-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.portada-flex > .portada-texto { flex: 1 1 280px; min-width: 0; }
+.portada-flex > figure { flex: 1 1 320px; min-width: 0; margin: 0; }
+.portada-flex figure img { width: 100%; max-height: 420px; object-fit: cover; }
+.enlaces-flex { display: flex; flex-wrap: wrap; align-items: stretch; gap: 1rem; margin-top: 1rem; }
+.enlaces-flex article { flex: 1 1 190px; min-width: 0; padding: 20px; background: var(--color-fondo); border: 1px solid var(--color-borde); border-radius: 10px; }
+.enlaces-flex article p { margin-top: .6rem; }
+/* Biografías en tarjetas flexibles */
+.biografias-flex { display: flex; flex-wrap: wrap; align-items: stretch; gap: 1.25rem; margin-top: 1.25rem; }
+.biografias-flex article { flex: 1 1 280px; min-width: 0; padding: 22px; border: 1px solid var(--color-borde); border-radius: 10px; background: var(--color-fondo); }
+.biografias-flex article p { margin-top: .75rem; }
+@media (max-width: 680px) {
+  header { align-items: flex-start; }
+  nav ul { justify-content: flex-start; }
+}
